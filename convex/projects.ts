@@ -30,6 +30,7 @@ export const getPartial = query({
     return await ctx.db
       .query("projects")
       .withIndex("by_owner", (q) => q.eq("ownerId", identity.subject))
+      .order("desc")
       .take(args.limit);
   }
 })
@@ -37,11 +38,12 @@ export const getPartial = query({
 export const get = query({
   args: {},
   handler: async (ctx) => {
-    const identity = verifyAuth(ctx);
+    const identity = await verifyAuth(ctx);
 
     return await ctx.db
       .query("projects")
       .withIndex("by_owner", (q) => q.eq("ownerId", identity.subject))
+      .order("desc")
       .collect();
   }
 })
