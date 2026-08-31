@@ -1,0 +1,61 @@
+<svg width="256" height="256" viewBox="0 0 256 256" fill="none" xmlns="http://www.w3.org/2000/svg">
+
+  <defs>
+    <!-- White Eye Gradient -->
+    <linearGradient id="eyeGradient" x1="32" y1="32" x2="224" y2="224" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#FFFFFF"/>
+      <stop offset="50%" stop-color="#F8FAFC"/>
+      <stop offset="100%" stop-color="#CBD5E1"/>
+    </linearGradient>
+
+    <!-- White Iris Gradient -->
+    <radialGradient id="irisGradient" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#FFFFFF"/>
+      <stop offset="45%" stop-color="#F8FAFC"/>
+      <stop offset="100%" stop-color="#CBD5E1"/>
+    </radialGradient>
+
+    <!-- White Glow -->
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="5" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Eye -->
+  <path
+    d="M32 128C58 82 98 56 128 56C158 56 198 82 224 128C198 174 158 200 128 200C98 200 58 174 32 128Z"
+    stroke="url(#eyeGradient)"
+    stroke-width="14"
+    fill="none"
+  />
+
+  <!-- Iris -->
+  <circle
+    cx="128"
+    cy="128"
+    r="34"
+    fill="url(#irisGradient)"
+    filter="url(#glow)"
+  />
+
+  <!-- Pupil -->
+  <circle
+    cx="128"
+    cy="128"
+    r="12"
+    fill="#000000"
+  />
+
+  <!-- Spark -->
+  <path
+    d="M128 86V74M128 182V170M170 128H182M74 128H86"
+    stroke="#FFFFFF"
+    stroke-width="6"
+    stroke-linecap="round"
+  />
+
+</svg>
