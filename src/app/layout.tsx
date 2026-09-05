@@ -4,6 +4,7 @@ import type { Metadata } from "next";
 import { IBM_Plex_Mono, Inter } from "next/font/google";
 
 import { Providers } from "@/components/providers";
+import { Toaster } from "@/components/ui/sonner";
 
 
 const inter = Inter({
@@ -34,6 +35,7 @@ export default function RootLayout({
       >
         <Providers>
            {children}
+          <Toaster />
         </Providers>
       </body>
     </html>
