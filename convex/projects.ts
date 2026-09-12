@@ -8,7 +8,7 @@ export const create = mutation({
         name: v.string(),
     },
     handler: async (ctx, args) => {
-         const identity = await verifyAuth(ctx);
+       const identity = await verifyAuth(ctx);
 
        const projectId = await ctx.db.insert("projects", {
             name: args.name,
